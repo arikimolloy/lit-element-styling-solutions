@@ -5,7 +5,7 @@ import '@arikimolloy/shadow-button/shadow-button-two';
 export default class ShadowFormTwo extends LitElement {
   render() {
     return html`
-      <link rel="stylesheet" href="../../consumer-styles.css" />
+      <link rel="stylesheet" href="consumer-styles.css" />
       <slot name="title"></slot>
       <p>This element chain imports a css stylesheet.</p>
       <form>
