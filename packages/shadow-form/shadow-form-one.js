@@ -10,15 +10,13 @@ export default class ShadowFormOne extends LitElement {
 
   render() {
     return html`
-      <slot name="title"></slot>
-      <p>
-        This element chain imports css literals and uses the LitElement static
-        styles getter.
-      </p>
-      <form>
-        <shadow-input-one></shadow-input-one>
-        <shadow-button-one></shadow-button-one>
-      </form>
+      <div class="form-contents">
+        <slot name="description"></slot>
+        <form>
+          <shadow-input-one></shadow-input-one>
+          <shadow-button-one></shadow-button-one>
+        </form>
+      </div>
     `;
   }
 }

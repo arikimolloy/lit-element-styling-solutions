@@ -2198,39 +2198,34 @@ var main = (function () {
     LitElement.render = render$1;
 
     var consumerStyles = css`
-  .form-container {
-    border: 2px dotted red;
-  }
+  /*
+    These CSS rules will apply to shadow-form-one via importing this module
+  */
 
-  .form-container + .form-container {
-    margin-top: 12px;
-  }
-
-  h1,
-  h3 {
-    text-align: center;
-  }
-
-  shadow-button-one,
-  shadow-button-two {
-    background: orange;
-    display: block;
-    margin: 12px 0px;
-  }
-
-  shadow-input-one,
-  shadow-input-two {
-    background: rgb(190, 240, 99);
-    display: block;
-    margin: 12px 0px;
-  }
-
-  input {
-    background: rgb(110, 230, 230);
+  .form-contents {
+    background: #7b2d26;
+    padding: 4px;
   }
 
   label {
-    background: yellow;
+    background: #0b7a75;
+    color: #aba194;
+    display: block;
+    width: 120px;
+    margin: 0px auto;
+  }
+
+  input {
+    background: #aba194;
+    color: #7b2d26;
+    display: block;
+    margin: 0px auto;
+  }
+
+  button {
+    background: #5f62ac;
+    display: block;
+    margin: 0px auto;
   }
 `;
 
@@ -2268,15 +2263,13 @@ var main = (function () {
 
       render() {
         return html`
-      <slot name="title"></slot>
-      <p>
-        This element chain imports css literals and uses the LitElement static
-        styles getter.
-      </p>
-      <form>
-        <shadow-input-one></shadow-input-one>
-        <shadow-button-one></shadow-button-one>
-      </form>
+      <div class="form-contents">
+        <slot name="description"></slot>
+        <form>
+          <shadow-input-one></shadow-input-one>
+          <shadow-button-one></shadow-button-one>
+        </form>
+      </div>
     `;
       }
     }
@@ -2285,7 +2278,7 @@ var main = (function () {
     class ShadowInputTwo extends LitElement {
       render() {
         return html`
-      <link rel="stylesheet" href="../../consumer-styles.css" />
+      <link rel="stylesheet" href="consumer-styles.css" />
       <label for="input">My Label Two</label>
       <input id="input" placeholder="Enter a value" />
     `;
@@ -2296,7 +2289,7 @@ var main = (function () {
     class ShadowButtonTwo extends LitElement {
       render() {
         return html`
-      <link rel="stylesheet" href="../../consumer-styles.css" />
+      <link rel="stylesheet" href="consumer-styles.css" />
       <button>ShadowButtonTwo</button>
     `;
       }
@@ -2306,35 +2299,210 @@ var main = (function () {
     class ShadowFormTwo extends LitElement {
       render() {
         return html`
-      <link rel="stylesheet" href="../../consumer-styles.css" />
-      <slot name="title"></slot>
-      <p>This element chain imports a css stylesheet.</p>
-      <form>
-        <shadow-input-two></shadow-input-two>
-        <shadow-button-two></shadow-button-two>
-      </form>
+      <link rel="stylesheet" href="consumer-styles.css" />
+      <div class="form-contents">
+        <slot name="description"></slot>
+        <form>
+          <shadow-input-two></shadow-input-two>
+          <shadow-button-two></shadow-button-two>
+        </form>
+      </div>
     `;
       }
     }
     customElements.define('shadow-form-two', ShadowFormTwo);
 
-    class StylingSolutionsDemo extends LitElement {
-      static get styles() {
-        return consumerStyles;
+    class ShadowInputThree extends LitElement {
+      createRenderRoot() {
+        return this;
       }
 
       render() {
         return html`
+      <label for="input">My Label Three</label>
+      <input id="input" placeholder="Enter a value" />
+    `;
+      }
+    }
+    customElements.define('shadow-input-three', ShadowInputThree);
+
+    class ShadowButtonThree extends LitElement {
+      createRenderRoot() {
+        return this;
+      }
+
+      render() {
+        return html`
+      <button>ShadowButtonThree</button>
+    `;
+      }
+    }
+    customElements.define('shadow-button-three', ShadowButtonThree);
+
+    class ShadowFormThree extends LitElement {
+      createRenderRoot() {
+        return this;
+      }
+
+      render() {
+        return html`
+      <div class="form-contents">
+        <h3>ShadowFormThree</h3>
+        <p>
+          This element chain renders to the light DOM.
+        </p>
+        <form>
+          <shadow-input-three></shadow-input-three>
+          <shadow-button-three></shadow-button-three>
+        </form>
+      </div>
+    `;
+      }
+    }
+    customElements.define('shadow-form-three', ShadowFormThree);
+
+    class ShadowInputFour extends LitElement {
+      render() {
+        return html`
+      <label for="input">My Label Four</label>
+      <input id="input" placeholder="Enter a value" />
+    `;
+      }
+    }
+
+    class ShadowButtonFour extends LitElement {
+      render() {
+        return html`
+      <button>ShadowButtonFour</button>
+    `;
+      }
+    }
+
+    class ShadowFormFactory {
+      constructor() {
+        this._funcMap = {
+          input: this._getInputEle,
+          button: this._getButtonEle
+        };
+      }
+
+      addFactoryFunc(name, func) {
+        this._funcMap[name] = func;
+      }
+
+      getFunc(name) {
+        return this._funcMap[name];
+      }
+
+      _getInputEle() {
+        return document.createElement('shadow-input-four');
+      }
+
+      _getButtonEle() {
+        return document.createElement('shadow-button-four');
+      }
+    }
+
+    class ShadowFormFour extends LitElement {
+      static properties() {
+        return {
+          formFactory: { type: Object }
+        };
+      }
+
+      constructor() {
+        super();
+        this.formFactory = new ShadowFormFactory();
+      }
+
+      render() {
+        const inputEle = this.formFactory.getFunc('input');
+        const buttonEle = this.formFactory.getFunc('button');
+        return html`
+      <div class="form-contents">
+        <slot name="description"></slot>
+        <form>
+          ${this.appendChild(inputEle())} ${this.appendChild(buttonEle())}
+        </form>
+      </div>
+    `;
+      }
+    }
+
+    var customStyles = css`
+  .form-contents {
+    background: #2a2b32;
+  }
+
+  input {
+    background: #2a2b32;
+  }
+
+  label {
+    background: #5f62ac;
+    color: #fafafa;
+  }
+
+  button {
+    font-size: 16px;
+  }
+`;
+
+    class CustomStyledShadowInputFour extends ShadowInputFour {
+      static get styles() {
+        return [customStyles];
+      }
+    }
+    customElements.define('shadow-input-four', CustomStyledShadowInputFour);
+
+    class CustomStyledShadowButtonFour extends ShadowButtonFour {
+      static get styles() {
+        return [customStyles];
+      }
+    }
+    customElements.define('shadow-button-four', CustomStyledShadowButtonFour);
+
+    customElements.define('shadow-form-four', ShadowFormFour);
+
+    class StylingSolutionsDemo extends LitElement {
+      render() {
+        return html`
+      <link rel="stylesheet" href="consumer-styles.css" />
+
       <h1>LitElement Styling Solutions</h1>
       <div class="form-container">
         <shadow-form-one>
-          <h3 slot="title">ShadowFormOne</h3>
+          <div slot="description">
+            <h3>ShadowFormOne</h3>
+            <p>
+              This element chain imports css literals and uses the LitElement
+              static styles getter.
+            </p>
+          </div>
         </shadow-form-one>
       </div>
       <div class="form-container">
         <shadow-form-two>
-          <h3 slot="title">ShadowFormTwo</h3>
+          <div slot="description">
+            <h3>ShadowFormTwo</h3>
+            <p>This element chain imports a css stylesheet.</p>
+          </div>
         </shadow-form-two>
+      </div>
+      <div class="form-container">
+        <shadow-form-three class="light-dom"></shadow-form-three>
+      </div>
+      <div class="form-container">
+        <shadow-form-four>
+          <div slot="description">
+            <h3>ShadowFormFour</h3>
+            <p>
+              This element chain extends existing components, provides the
+              static styles getter which returns its custom styles, and defines
+              the custom element on the registry.
+            </p>
+          </div>
+        </shadow-form-four>
       </div>
     `;
       }

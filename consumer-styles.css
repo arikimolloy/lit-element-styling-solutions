@@ -11,24 +11,84 @@ h3 {
   text-align: center;
 }
 
-shadow-button-one,
-shadow-button-two {
-  background: orange;
-  display: block;
-  margin: 12px 0px;
+shadow-form-one h3,
+p {
+  color: #aba194;
 }
 
-shadow-input-one,
-shadow-input-two {
-  background: rgb(190, 240, 99);
-  display: block;
-  margin: 12px 0px;
+/*
+  These CSS rules will apply to shadow-form-three via light dom
+*/
+
+.light-dom > .form-contents {
+  background: #fdf6e3;
 }
 
-input {
-  background: rgb(110, 230, 230);
+.light-dom > .form-contents h3 {
+  color: #859900;
+}
+
+.light-dom > .form-contents p {
+  color: #b58900;
+}
+
+.light-dom > .form-contents label {
+  color: #dc322f;
+  background-color: inherit;
+}
+
+.light-dom > .form-contents shadow-input-three {
+  background-color: #eee8d5;
+}
+
+.light-dom > .form-contents input {
+  background-color: #fdf6e3;
+  font-size: 14px;
+}
+
+.light-dom > .form-contents shadow-button-three {
+  background: inherit;
+}
+
+.light-dom > .form-contents button {
+  background-color: #93a1a1;
+  display: block;
+  margin: 0px auto;
+  font-size: 13px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/*
+  These CSS rules will apply to shadow-form-two via importing style sheet in shadow dom
+*/
+
+.form-contents {
+  background: #3e3e3e;
+  color: #eeeeee;
+  padding: 4px;
+}
+
+shadow-form-two h3 {
+  color: #fd6363;
 }
 
 label {
-  background: yellow;
+  color: #fd6363;
+}
+
+input {
+  background: #eeeeee;
+}
+
+button {
+  font-weight: bold;
+  display: block;
+  margin: 0px auto;
+  cursor: crosshair;
+}
+
+shadow-input-two,
+shadow-button-two {
+  background: #494949;
 }

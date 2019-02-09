@@ -1,25 +1,48 @@
 import { LitElement, html } from 'lit-element';
 import '@arikimolloy/shadow-form/shadow-form-one';
 import '@arikimolloy/shadow-form/shadow-form-two';
-import myStyles from '../../consumer-styles';
+import '@arikimolloy/shadow-form/shadow-form-three';
+import './custom-styled-shadow-form-four';
 
 export default class StylingSolutionsDemo extends LitElement {
-  static get styles() {
-    return myStyles;
-  }
-
   render() {
     return html`
+      <link rel="stylesheet" href="consumer-styles.css" />
+
       <h1>LitElement Styling Solutions</h1>
       <div class="form-container">
         <shadow-form-one>
-          <h3 slot="title">ShadowFormOne</h3>
+          <div slot="description">
+            <h3>ShadowFormOne</h3>
+            <p>
+              This element chain imports css literals and uses the LitElement
+              static styles getter.
+            </p>
+          </div>
         </shadow-form-one>
       </div>
       <div class="form-container">
         <shadow-form-two>
-          <h3 slot="title">ShadowFormTwo</h3>
+          <div slot="description">
+            <h3>ShadowFormTwo</h3>
+            <p>This element chain imports a css stylesheet.</p>
+          </div>
         </shadow-form-two>
+      </div>
+      <div class="form-container">
+        <shadow-form-three class="light-dom"></shadow-form-three>
+      </div>
+      <div class="form-container">
+        <shadow-form-four>
+          <div slot="description">
+            <h3>ShadowFormFour</h3>
+            <p>
+              This element chain extends existing components, provides the
+              static styles getter which returns its custom styles, and defines
+              the custom element on the registry.
+            </p>
+          </div>
+        </shadow-form-four>
       </div>
     `;
   }

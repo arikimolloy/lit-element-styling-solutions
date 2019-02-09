@@ -1,38 +1,33 @@
 import { css } from 'lit-element';
 
 export default css`
-  .form-container {
-    border: 2px dotted red;
-  }
+  /*
+    These CSS rules will apply to shadow-form-one via importing this module
+  */
 
-  .form-container + .form-container {
-    margin-top: 12px;
-  }
-
-  h1,
-  h3 {
-    text-align: center;
-  }
-
-  shadow-button-one,
-  shadow-button-two {
-    background: orange;
-    display: block;
-    margin: 12px 0px;
-  }
-
-  shadow-input-one,
-  shadow-input-two {
-    background: rgb(190, 240, 99);
-    display: block;
-    margin: 12px 0px;
-  }
-
-  input {
-    background: rgb(110, 230, 230);
+  .form-contents {
+    background: #7b2d26;
+    padding: 4px;
   }
 
   label {
-    background: yellow;
+    background: #0b7a75;
+    color: #aba194;
+    display: block;
+    width: 120px;
+    margin: 0px auto;
+  }
+
+  input {
+    background: #aba194;
+    color: #7b2d26;
+    display: block;
+    margin: 0px auto;
+  }
+
+  button {
+    background: #5f62ac;
+    display: block;
+    margin: 0px auto;
   }
 `;
