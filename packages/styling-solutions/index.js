@@ -9,7 +9,15 @@ export default class StylingSolutionsDemo extends LitElement {
     return html`
       <link rel="stylesheet" href="consumer-styles.css" />
 
-      <h1>LitElement Styling Solutions</h1>
+      <h1>🔥 LitElement Styling Solutions 💄</h1>
+      <div class="social-button-container">
+        <a href="https://github.com/arikimolloy/lit-element-styling-solutions"
+          ><img
+            alt="undefined"
+            src="https://img.shields.io/github/stars/arikimolloy/lit-element-styling-solutions.svg?style=social"
+          />
+        </a>
+      </div>
       <div class="form-container">
         <shadow-form-one>
           <div slot="description">
