@@ -2434,6 +2434,10 @@ var main = (function () {
     background: #2a2b32;
   }
 
+  div {
+    background: red;
+  }
+
   input {
     background: #2a2b32;
   }

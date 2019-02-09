@@ -5,6 +5,10 @@ export default css`
     background: #2a2b32;
   }
 
+  div {
+    background: red;
+  }
+
   input {
     background: #2a2b32;
   }

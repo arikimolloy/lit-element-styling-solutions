@@ -10,15 +10,6 @@ export default class StylingSolutionsDemo extends LitElement {
       <link rel="stylesheet" href="consumer-styles.css" />
 
       <h1>LitElement Styling Solutions</h1>
-      <div>
-        <a
-          class="github-button"
-          href="https://github.com/arikimolloy/lit-element-styling-solutions"
-          data-size="large"
-          aria-label="Star arikimolloy/lit-element-styling-solutions on GitHub"
-          >Star</a
-        >
-      </div>
       <div class="form-container">
         <shadow-form-one>
           <div slot="description">
