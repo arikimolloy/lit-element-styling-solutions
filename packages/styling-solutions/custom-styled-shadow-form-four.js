@@ -8,4 +8,4 @@ export default class CustomStyledShadowFormFour extends ShadowFormFour {
     return [customStyles];
   }
 }
-customElements.define('shadow-form-four', ShadowFormFour);
+customElements.define('shadow-form-four', CustomStyledShadowFormFour);

@@ -2,7 +2,8 @@ import { css } from 'lit-element';
 
 export default css`
   .form-contents {
-    background: #2a2b32;
+    padding: 4px;
+    background: #0000ff;
   }
 
   div {
@@ -11,14 +12,16 @@ export default css`
 
   input {
     background: #2a2b32;
+    color: #00ff00;
   }
 
   label {
-    background: #5f62ac;
-    color: #fafafa;
+    background: #eeeeee;
+    color: #990033;
   }
 
   button {
+    cursor: not-allowed;
     font-size: 16px;
   }
 `;

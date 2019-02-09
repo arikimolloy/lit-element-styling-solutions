@@ -2431,7 +2431,8 @@ var main = (function () {
 
     var customStyles = css`
   .form-contents {
-    background: #2a2b32;
+    padding: 4px;
+    background: #0000ff;
   }
 
   div {
@@ -2440,14 +2441,16 @@ var main = (function () {
 
   input {
     background: #2a2b32;
+    color: #00ff00;
   }
 
   label {
-    background: #5f62ac;
-    color: #fafafa;
+    background: #eeeeee;
+    color: #990033;
   }
 
   button {
+    cursor: not-allowed;
     font-size: 16px;
   }
 `;
@@ -2466,7 +2469,12 @@ var main = (function () {
     }
     customElements.define('shadow-button-four', CustomStyledShadowButtonFour);
 
-    customElements.define('shadow-form-four', ShadowFormFour);
+    class CustomStyledShadowFormFour extends ShadowFormFour {
+      static get styles() {
+        return [customStyles];
+      }
+    }
+    customElements.define('shadow-form-four', CustomStyledShadowFormFour);
 
     class StylingSolutionsDemo extends LitElement {
       render() {

@@ -1,7 +1,3 @@
-div > a {
-  text-align: center;
-}
-
 .form-container {
   border: 2px dotted red;
 }
@@ -16,8 +12,13 @@ h3 {
 }
 
 shadow-form-one h3,
-p {
+shadow-form-one p {
   color: #aba194;
+}
+
+shadow-form-four h3,
+shadow-form-four p {
+  color: #00ff00;
 }
 
 /*
