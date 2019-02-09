@@ -1,3 +1,7 @@
+div > a {
+  text-align: center;
+}
+
 .form-container {
   border: 2px dotted red;
 }
