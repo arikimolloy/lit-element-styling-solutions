@@ -1,0 +1,13 @@
+{
+  "name": "@arikimolloy/shadow-form",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Ariki Molloy <ariki.molloy@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@arikimolloy/shadow-button": "^0.0.0",
+    "@arikimolloy/shadow-input": "^0.0.0",
+    "lit-element": "^2.0.1"
+  }
+}

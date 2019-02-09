@@ -1,0 +1,11 @@
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "npmClient": "npm"
+    }
+  },
+  "useWorkspaces": true
+}

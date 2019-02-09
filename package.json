@@ -1,0 +1,10 @@
+{
+  "name": "lit-element-styling-solutions",
+  "devDependencies": {
+    "lerna": "^3.6.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true
+}
