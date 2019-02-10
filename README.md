@@ -8,7 +8,7 @@ See the demo [here](https://arikimolloy.github.io/lit-element-styling-solutions/
 
 ## Styling Solutions
 
-\#1: [Import external CSSResult](./docs/import-external-cssresult/README.md)
+\#1: [Import external CSSResult](./docs/import-external-cssresult/README.md)  
 \#2:
 
 ## Todo
