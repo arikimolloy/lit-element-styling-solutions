@@ -6,7 +6,8 @@ This method forces the consumer to define a file in a specific location (likely 
 
 **The good**:  
 -Consumers can completely style the internals of your shadow DOM  
--Can import the same CSSResult in multiple files so consumer just needs to define one file. Can also be a negative if the file becomes too much to maintain easily.
+-Can import the same CSSResult in multiple files so consumer just needs to define one file. Can also be a negative if the file becomes too much to maintain easily.  
+-Can provide default styles and consumers can easily override them.
 
 **The bad**:  
 -This is a fragile and hacky solution to get around shadow DOM encapsulation  

@@ -5,10 +5,11 @@ You can render your web components to the light DOM instead of the shadow DOM.
 This method removes the benefits of the shadow DOM (style and DOM encapsulation), but may be the simplest and easiest way to expose your components for external styling.
 
 **The good**:  
--Consumers have complete styling ability of your component.
+-Consumers have complete styling ability of your component.  
+-Can provide default styles and consumers can easily override them.
 
 **The bad**:  
--Removes benefits of style and DOM encapsulation.
+-Removes benefits of style and DOM encapsulation (can be very bad!).
 
 **When to use it**:  
 -When you need to be able to complexly style a shadow tree and exposing enough CSS properties is not practical. Within your own personal project or for internal use within your organization where you want to utilize reusable components but be able to style them with a completely different look-and-feel between projects.  
