@@ -23,9 +23,7 @@ See the demo [here](https://arikimolloy.github.io/lit-element-styling-solutions/
 \#5: [Use a global styles object](./docs/global-styles-object/README.md)
 
 ## Todo
-
-[ ] Organize code better  
-[ ] Add code snippets to demo  
+ 
 [ ] Convert to Sass, figure out better inheritance/composition/organization of styles  
 [ ] Demo Justin's idea for a solution: Walk up the shadow host tree looking for elements that have a certain property that'll contain theme styles, and apply them. This could incur some cost, but there's some memoization that can be done to reduce it. Similar to ThemableMixin I believe.  
 [ ] Demo [shadow parts](https://www.w3.org/TR/css-shadow-parts-1/)
