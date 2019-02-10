@@ -1,10 +1,11 @@
 import { LitElement, html } from 'lit-element';
 import '@arikimolloy/shadow-input/shadow-input-five';
 import '@arikimolloy/shadow-button/shadow-button-five';
+import './global-styles';
 
 export default class ShadowFormFive extends LitElement {
   static get styles() {
-    return [window.GlobalShadowStyles];
+    return [window.GlobalShadowStyles['shadow-form-five']];
   }
 
   render() {

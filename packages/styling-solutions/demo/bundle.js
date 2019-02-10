@@ -2197,9 +2197,10 @@ var main = (function () {
      */
     LitElement.render = render$1;
 
-    window.GlobalShadowStyles = css`
+    window.GlobalShadowStyles = window.GlobalShadowStyles || {};
+    window.GlobalShadowStyles['shadow-form-five'] = css`
   /*
-    These CSS rules will apply to shadow-form-five via reference to object on window
+    These CSS rules will apply to shadow-form-five via reference to 'shadow-form-five' property of GlobalShadowStyles on window
   */
 
   .form-contents {
@@ -2207,6 +2208,27 @@ var main = (function () {
     padding: 4px;
     text-align: center;
   }
+`;
+
+    window.GlobalShadowStyles['shadow-button-five'] = css`
+  /*
+    These CSS rules will apply to shadow-button-five via reference to 'shadow-button-five' property of GlobalShadowStyles on window
+  */
+
+  button {
+    background: #b82601;
+    display: block;
+    margin: 0px auto;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+`;
+
+    window.GlobalShadowStyles['shadow-input-five'] = css`
+  /*
+    These CSS rules will apply to shadow-input-five via reference to 'shadow-input-five' property of GlobalShadowStyles on window
+  */
 
   label {
     background: #062f4f;
@@ -2224,15 +2246,6 @@ var main = (function () {
     margin: 0px auto;
     font-size: 20px;
     margin-bottom: 14px;
-  }
-
-  button {
-    background: #b82601;
-    display: block;
-    margin: 0px auto;
-    border-radius: 40px;
-    font-size: 16px;
-    cursor: pointer;
   }
 `;
 
@@ -2397,6 +2410,7 @@ var main = (function () {
         <p>
           This element chain renders to the light DOM.
         </p>
+        <p>This method loses shadow DOM benefits for the component.</p>
         <form>
           <shadow-input-three></shadow-input-three>
           <shadow-button-three></shadow-button-three>
@@ -2407,9 +2421,28 @@ var main = (function () {
     }
     customElements.define('shadow-form-three', ShadowFormThree);
 
+    window.GlobalShadowStyles = window.GlobalShadowStyles || {};
+    window.GlobalShadowStyles['shadow-input-five'] =
+      window.GlobalShadowStyles['shadow-input-five'] ||
+      css`
+    /*
+      Default styles
+    */
+    label {
+      background: orange;
+      color: black;
+      font-weight: bold;
+    }
+
+    input {
+      font-size: 20px;
+      font-family: fantasy;
+    }
+  `;
+
     class ShadowInputFive extends LitElement {
       static get styles() {
-        return [window.GlobalShadowStyles];
+        return [window.GlobalShadowStyles['shadow-input-five']];
       }
 
       render() {
@@ -2421,9 +2454,22 @@ var main = (function () {
     }
     customElements.define('shadow-input-five', ShadowInputFive);
 
+    window.GlobalShadowStyles = window.GlobalShadowStyles || {};
+    window.GlobalShadowStyles['shadow-button-five'] =
+      window.GlobalShadowStyles['shadow-button-five'] ||
+      css`
+    /*
+      Default styles
+    */
+    button {
+      font-size: 20px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  `;
+
     class ShadowButtonFive extends LitElement {
       static get styles() {
-        return [window.GlobalShadowStyles];
+        return [window.GlobalShadowStyles['shadow-button-five']];
       }
 
       render() {
@@ -2434,9 +2480,51 @@ var main = (function () {
     }
     customElements.define('shadow-button-five', ShadowButtonFive);
 
+    window.GlobalShadowStyles = window.GlobalShadowStyles || {};
+    window.GlobalShadowStyles['shadow-form-five'] =
+      window.GlobalShadowStyles['shadow-form-five'] ||
+      css`
+    /*
+      Default styles
+    */
+
+    .form-contents {
+      background: green;
+      padding: 4px;
+      text-align: center;
+    }
+
+    label {
+      background: red;
+      color: #813772;
+      display: block;
+      width: 140px;
+      margin: 4px auto 0px auto;
+      font-size: 20px;
+    }
+
+    input {
+      background: blue;
+      color: #7b2d26;
+      display: block;
+      margin: 0px auto;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    button {
+      background: black;
+      display: block;
+      margin: 0px auto;
+      border-radius: 40px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  `;
+
     class ShadowFormFive extends LitElement {
       static get styles() {
-        return [window.GlobalShadowStyles];
+        return [window.GlobalShadowStyles['shadow-form-five']];
       }
 
       render() {
@@ -2592,6 +2680,11 @@ var main = (function () {
               This element chain imports css literals and uses the LitElement
               static styles getter.
             </p>
+            <p>
+              This method forces the consumer to define a file in a specific
+              location (their app's root directory) with a specific name
+              (consumer-styles.js in this demo case).
+            </p>
           </div>
         </shadow-form-one>
       </div>
@@ -2599,7 +2692,14 @@ var main = (function () {
         <shadow-form-two>
           <div slot="description">
             <h3>ShadowFormTwo</h3>
-            <p>This element chain imports a css stylesheet.</p>
+            <p>
+              This element chain imports a css stylesheet.
+            </p>
+            <p>
+              This method forces the consumer to define a stylesheet in a
+              specific location (their app's root directory) with a specific
+              name (consumer-styles.css in this demo case).
+            </p>
           </div>
         </shadow-form-two>
       </div>
@@ -2615,6 +2715,10 @@ var main = (function () {
               static styles getter which returns its custom styles, and defines
               the custom element on the registry.
             </p>
+            <p>
+              This method forces your user to extend all your components they
+              want to style and define them on the custom element registry.
+            </p>
           </div>
         </shadow-form-four>
       </div>
@@ -2623,8 +2727,13 @@ var main = (function () {
           <div slot="description">
             <h3>ShadowFormFive</h3>
             <p>
-              This element chain imports a global CSSResult and returns it in
-              the static styles getter.
+              This element chain imports a specific CSSResult from a global
+              object on window and returns it in the corresponding static styles
+              getter for each element.
+            </p>
+            <p>
+              This method allows you to define default styles and allows the
+              consumer to override the default styles as necessary.
             </p>
           </div>
         </shadow-form-five>

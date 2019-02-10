@@ -14,6 +14,7 @@ export default class ShadowFormThree extends LitElement {
         <p>
           This element chain renders to the light DOM.
         </p>
+        <p>This method loses shadow DOM benefits for the component.</p>
         <form>
           <shadow-input-three></shadow-input-three>
           <shadow-button-three></shadow-button-three>

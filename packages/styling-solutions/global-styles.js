@@ -1,8 +1,9 @@
 import { css } from 'lit-element';
 
-window.GlobalShadowStyles = css`
+window.GlobalShadowStyles = window.GlobalShadowStyles || {};
+window.GlobalShadowStyles['shadow-form-five'] = css`
   /*
-    These CSS rules will apply to shadow-form-five via reference to object on window
+    These CSS rules will apply to shadow-form-five via reference to 'shadow-form-five' property of GlobalShadowStyles on window
   */
 
   .form-contents {
@@ -10,6 +11,27 @@ window.GlobalShadowStyles = css`
     padding: 4px;
     text-align: center;
   }
+`;
+
+window.GlobalShadowStyles['shadow-button-five'] = css`
+  /*
+    These CSS rules will apply to shadow-button-five via reference to 'shadow-button-five' property of GlobalShadowStyles on window
+  */
+
+  button {
+    background: #b82601;
+    display: block;
+    margin: 0px auto;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+`;
+
+window.GlobalShadowStyles['shadow-input-five'] = css`
+  /*
+    These CSS rules will apply to shadow-input-five via reference to 'shadow-input-five' property of GlobalShadowStyles on window
+  */
 
   label {
     background: #062f4f;
@@ -27,14 +49,5 @@ window.GlobalShadowStyles = css`
     margin: 0px auto;
     font-size: 20px;
     margin-bottom: 14px;
-  }
-
-  button {
-    background: #b82601;
-    display: block;
-    margin: 0px auto;
-    border-radius: 40px;
-    font-size: 16px;
-    cursor: pointer;
   }
 `;

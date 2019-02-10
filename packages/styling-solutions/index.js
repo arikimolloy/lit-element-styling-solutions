@@ -28,6 +28,11 @@ export default class StylingSolutionsDemo extends LitElement {
               This element chain imports css literals and uses the LitElement
               static styles getter.
             </p>
+            <p>
+              This method forces the consumer to define a file in a specific
+              location (their app's root directory) with a specific name
+              (consumer-styles.js in this demo case).
+            </p>
           </div>
         </shadow-form-one>
       </div>
@@ -35,7 +40,14 @@ export default class StylingSolutionsDemo extends LitElement {
         <shadow-form-two>
           <div slot="description">
             <h3>ShadowFormTwo</h3>
-            <p>This element chain imports a css stylesheet.</p>
+            <p>
+              This element chain imports a css stylesheet.
+            </p>
+            <p>
+              This method forces the consumer to define a stylesheet in a
+              specific location (their app's root directory) with a specific
+              name (consumer-styles.css in this demo case).
+            </p>
           </div>
         </shadow-form-two>
       </div>
@@ -51,6 +63,10 @@ export default class StylingSolutionsDemo extends LitElement {
               static styles getter which returns its custom styles, and defines
               the custom element on the registry.
             </p>
+            <p>
+              This method forces your user to extend all your components they
+              want to style and define them on the custom element registry.
+            </p>
           </div>
         </shadow-form-four>
       </div>
@@ -59,8 +75,13 @@ export default class StylingSolutionsDemo extends LitElement {
           <div slot="description">
             <h3>ShadowFormFive</h3>
             <p>
-              This element chain imports a global CSSResult and returns it in
-              the static styles getter.
+              This element chain imports a specific CSSResult from a global
+              object on window and returns it in the corresponding static styles
+              getter for each element.
+            </p>
+            <p>
+              This method allows you to define default styles and allows the
+              consumer to override the default styles as necessary.
             </p>
           </div>
         </shadow-form-five>

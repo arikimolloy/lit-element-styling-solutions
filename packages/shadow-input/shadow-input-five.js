@@ -1,8 +1,9 @@
 import { LitElement, html } from 'lit-element';
+import './global-styles';
 
 export default class ShadowInputFive extends LitElement {
   static get styles() {
-    return [window.GlobalShadowStyles];
+    return [window.GlobalShadowStyles['shadow-input-five']];
   }
 
   render() {
