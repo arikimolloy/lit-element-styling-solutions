@@ -4,16 +4,16 @@ Your element can import externally-defined css literals with a relative path and
 
 This method forces the consumer to define a file in a specific location (likely their app's root directory) with a specific name (consumer-styles.js in this demo case).
 
-**The good**:
--Consumers can completely style the internals of your shadow DOM
+**The good**:  
+-Consumers can completely style the internals of your shadow DOM  
 -Can import the same CSSResult in multiple files so consumer just needs to define one file. Can also be a negative if the file becomes too much to maintain easily.
 
-**The bad**:
--This is a fragile and hacky solution to get around shadow DOM encapsulation
+**The bad**:  
+-This is a fragile and hacky solution to get around shadow DOM encapsulation  
 -Forces consumers to do something that the component author defines (file location/name)
 -Hard to maintain and work with
 
-**When to use it**:
+**When to use it**:  
 -When you need to be able to complexly style a shadow tree and exposing enough CSS properties is not practical. Within your own personal project or for internal use within your organization, not a publicly published component.
 
 ### Example
