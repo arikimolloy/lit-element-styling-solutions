@@ -4,7 +4,7 @@ Demonstrates different external styling solutions for [LitElement](https://lit-e
 
 **These are special-case solutions** and should probably only be used internally in an organization, where the organization has a suite of complex Web Components to be reused across projects which each might require a completely different look-and-feel.
 
-For simple theming (e.g. color schemes and fonts), CSS properties (and shadow parts, when implemented) should suffice.
+For simple theming (e.g. color schemes and fonts), CSS properties (and [shadow parts](https://www.w3.org/TR/css-shadow-parts-1/), when implemented) should suffice.
 
 For Web Components with complex business logic, it may be better for you to abstract functionality into a "base" Web Component which consumers can extend and implement their own DOM and styling and define in the custom element registry.
 
