@@ -2,7 +2,7 @@
 
 Demonstrates different external styling solutions for [LitElement](https://lit-element.polymer-project.org/). Some of these implementations apply to vanilla Web Components as well.
 
-**These are special-case solutions** and should probably only be used internally in an organization, where the organization has a suite of complex Web Components to be reused across projects which each might require a completely different look-and-feel via complex styling.
+**These are special-case solutions** and should probably only be used internally in an organization, where the organization has a suite of complex Web Components to be reused across projects which each might require a completely different look-and-feel via complex CSS rules.
 
 For simple theming (e.g. color schemes and fonts), CSS properties (and [shadow parts](https://www.w3.org/TR/css-shadow-parts-1/), when implemented) should suffice.
 
