@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit-element';
 
 export default class ShadowButtonThree extends LitElement {
   createRenderRoot() {
-    return this;
+    return this; // render to the light DOM
   }
 
   render() {

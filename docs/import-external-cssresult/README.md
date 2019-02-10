@@ -14,7 +14,8 @@ This method forces the consumer to define a file in a specific location (likely 
 -Hard to maintain and work with
 
 **When to use it**:  
--When you need to be able to complexly style a shadow tree and exposing enough CSS properties is not practical. Within your own personal project or for internal use within your organization, not a publicly published component.
+-When you need to be able to complexly style a shadow tree and exposing enough CSS properties is not practical. Within your own personal project or for internal use within your organization.  
+-This method should not be used in a publicly published component.
 
 ### Example
 
