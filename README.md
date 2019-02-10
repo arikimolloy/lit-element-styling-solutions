@@ -1,6 +1,6 @@
 # 🔥 LitElement Styling Solutions 💄
 
-Demonstrates different styling solutions for [LitElement](https://lit-element.polymer-project.org/). Some of these implementations apply to vanilla Web Components as well.
+Demonstrates different external styling solutions for [LitElement](https://lit-element.polymer-project.org/). Some of these implementations apply to vanilla Web Components as well.
 
 ## Demo
 
