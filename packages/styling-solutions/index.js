@@ -1,7 +1,9 @@
 import { LitElement, html } from 'lit-element';
+import './global-styles';
 import '@arikimolloy/shadow-form/shadow-form-one';
 import '@arikimolloy/shadow-form/shadow-form-two';
 import '@arikimolloy/shadow-form/shadow-form-three';
+import '@arikimolloy/shadow-form/shadow-form-five';
 import './custom-styled-shadow-form-four';
 
 export default class StylingSolutionsDemo extends LitElement {
@@ -51,6 +53,17 @@ export default class StylingSolutionsDemo extends LitElement {
             </p>
           </div>
         </shadow-form-four>
+      </div>
+      <div class="form-container">
+        <shadow-form-five>
+          <div slot="description">
+            <h3>ShadowFormFive</h3>
+            <p>
+              This element chain imports a global CSSResult and returns it in
+              the static styles getter.
+            </p>
+          </div>
+        </shadow-form-five>
       </div>
     `;
   }

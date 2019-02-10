@@ -2197,6 +2197,45 @@ var main = (function () {
      */
     LitElement.render = render$1;
 
+    window.GlobalShadowStyles = css`
+  /*
+    These CSS rules will apply to shadow-form-five via reference to object on window
+  */
+
+  .form-contents {
+    background: #000000;
+    padding: 4px;
+    text-align: center;
+  }
+
+  label {
+    background: #062f4f;
+    color: #813772;
+    display: block;
+    width: 140px;
+    margin: 4px auto 0px auto;
+    font-size: 20px;
+  }
+
+  input {
+    background: #062f4f;
+    color: #7b2d26;
+    display: block;
+    margin: 0px auto;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  button {
+    background: #b82601;
+    display: block;
+    margin: 0px auto;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+`;
+
     var consumerStyles = css`
   /*
     These CSS rules will apply to shadow-form-one via importing this module
@@ -2205,14 +2244,16 @@ var main = (function () {
   .form-contents {
     background: #7b2d26;
     padding: 4px;
+    text-align: center;
   }
 
   label {
     background: #0b7a75;
     color: #aba194;
     display: block;
-    width: 120px;
-    margin: 0px auto;
+    width: 140px;
+    margin: 4px auto 0px auto;
+    font-size: 20px;
   }
 
   input {
@@ -2220,12 +2261,17 @@ var main = (function () {
     color: #7b2d26;
     display: block;
     margin: 0px auto;
+    font-size: 20px;
+    margin-bottom: 14px;
   }
 
   button {
     background: #5f62ac;
     display: block;
     margin: 0px auto;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
   }
 `;
 
@@ -2361,6 +2407,52 @@ var main = (function () {
     }
     customElements.define('shadow-form-three', ShadowFormThree);
 
+    class ShadowInputFive extends LitElement {
+      static get styles() {
+        return [window.GlobalShadowStyles];
+      }
+
+      render() {
+        return html`
+      <label for="input">My Label Five</label>
+      <input id="input" placeholder="Enter a value" />
+    `;
+      }
+    }
+    customElements.define('shadow-input-five', ShadowInputFive);
+
+    class ShadowButtonFive extends LitElement {
+      static get styles() {
+        return [window.GlobalShadowStyles];
+      }
+
+      render() {
+        return html`
+      <button>ShadowButtonFive</button>
+    `;
+      }
+    }
+    customElements.define('shadow-button-five', ShadowButtonFive);
+
+    class ShadowFormFive extends LitElement {
+      static get styles() {
+        return [window.GlobalShadowStyles];
+      }
+
+      render() {
+        return html`
+      <div class="form-contents">
+        <slot name="description"></slot>
+        <form>
+          <shadow-input-five></shadow-input-five>
+          <shadow-button-five></shadow-button-five>
+        </form>
+      </div>
+    `;
+      }
+    }
+    customElements.define('shadow-form-five', ShadowFormFive);
+
     class ShadowInputFour extends LitElement {
       render() {
         return html`
@@ -2433,6 +2525,7 @@ var main = (function () {
   .form-contents {
     padding: 4px;
     background: #0000ff;
+    text-align: center;
   }
 
   div {
@@ -2442,6 +2535,7 @@ var main = (function () {
   input {
     background: #2a2b32;
     color: #00ff00;
+    font-size: 14px;
   }
 
   label {
@@ -2523,6 +2617,17 @@ var main = (function () {
             </p>
           </div>
         </shadow-form-four>
+      </div>
+      <div class="form-container">
+        <shadow-form-five>
+          <div slot="description">
+            <h3>ShadowFormFive</h3>
+            <p>
+              This element chain imports a global CSSResult and returns it in
+              the static styles getter.
+            </p>
+          </div>
+        </shadow-form-five>
       </div>
     `;
       }

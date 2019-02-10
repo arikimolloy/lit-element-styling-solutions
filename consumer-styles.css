@@ -17,6 +17,11 @@ h3 {
   text-align: center;
 }
 
+shadow-form-two h3,
+shadow-form-two p {
+  font-family: 'Poppins', sans-serif;
+}
+
 shadow-form-one h3,
 shadow-form-one p {
   color: #aba194;
@@ -27,12 +32,57 @@ shadow-form-four p {
   color: #00ff00;
 }
 
+shadow-form-five h3,
+shadow-form-five p {
+  color: #813772;
+}
+
+/*
+  These CSS rules will apply to shadow-form-two via importing style sheet in shadow dom
+*/
+
+.form-contents {
+  background: #3e3e3e;
+  color: #eeeeee;
+  padding: 4px;
+  text-align: center;
+}
+
+shadow-form-two h3 {
+  color: #fd6363;
+}
+
+label {
+  color: #fd6363;
+}
+
+input {
+  background: #eeeeee;
+  margin-bottom: 14px;
+}
+
+button {
+  display: block;
+  margin: 0px auto;
+  cursor: crosshair;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+shadow-input-two,
+shadow-button-two {
+  background: #494949;
+}
+
 /*
   These CSS rules will apply to shadow-form-three via light dom
 */
 
 .light-dom > .form-contents {
   background: #fdf6e3;
+  font-family: 'Lobster', cursive;
+  font-size: 18px;
+  text-align: center;
 }
 
 .light-dom > .form-contents h3 {
@@ -54,7 +104,7 @@ shadow-form-four p {
 
 .light-dom > .form-contents input {
   background-color: #fdf6e3;
-  font-size: 14px;
+  margin-bottom: 14px;
 }
 
 .light-dom > .form-contents shadow-button-three {
@@ -65,41 +115,8 @@ shadow-form-four p {
   background-color: #93a1a1;
   display: block;
   margin: 0px auto;
-  font-size: 13px;
+  font-size: 18px;
   border-radius: 25px;
   cursor: pointer;
-}
-
-/*
-  These CSS rules will apply to shadow-form-two via importing style sheet in shadow dom
-*/
-
-.form-contents {
-  background: #3e3e3e;
-  color: #eeeeee;
-  padding: 4px;
-}
-
-shadow-form-two h3 {
-  color: #fd6363;
-}
-
-label {
-  color: #fd6363;
-}
-
-input {
-  background: #eeeeee;
-}
-
-button {
-  font-weight: bold;
-  display: block;
-  margin: 0px auto;
-  cursor: crosshair;
-}
-
-shadow-input-two,
-shadow-button-two {
-  background: #494949;
+  font-family: inherit;
 }

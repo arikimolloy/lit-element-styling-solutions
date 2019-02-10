@@ -1,19 +1,19 @@
 import { css } from 'lit-element';
 
-export default css`
+window.GlobalShadowStyles = css`
   /*
-    These CSS rules will apply to shadow-form-one via importing this module
+    These CSS rules will apply to shadow-form-five via reference to object on window
   */
 
   .form-contents {
-    background: #7b2d26;
+    background: #000000;
     padding: 4px;
     text-align: center;
   }
 
   label {
-    background: #0b7a75;
-    color: #aba194;
+    background: #062f4f;
+    color: #813772;
     display: block;
     width: 140px;
     margin: 4px auto 0px auto;
@@ -21,7 +21,7 @@ export default css`
   }
 
   input {
-    background: #aba194;
+    background: #062f4f;
     color: #7b2d26;
     display: block;
     margin: 0px auto;
@@ -30,7 +30,7 @@ export default css`
   }
 
   button {
-    background: #5f62ac;
+    background: #b82601;
     display: block;
     margin: 0px auto;
     border-radius: 40px;

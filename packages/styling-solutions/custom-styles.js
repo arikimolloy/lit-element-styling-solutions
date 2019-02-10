@@ -4,6 +4,7 @@ export default css`
   .form-contents {
     padding: 4px;
     background: #0000ff;
+    text-align: center;
   }
 
   div {
@@ -13,6 +14,7 @@ export default css`
   input {
     background: #2a2b32;
     color: #00ff00;
+    font-size: 14px;
   }
 
   label {
