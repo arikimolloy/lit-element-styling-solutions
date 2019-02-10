@@ -1,0 +1,11 @@
+{
+  "name": "@arikimolloy/import-external-cssresult",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Ariki Molloy <ariki.molloy@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "lit-element": "^2.0.1"
+  }
+}

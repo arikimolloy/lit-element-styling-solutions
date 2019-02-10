@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
-import '@arikimolloy/shadow-input/shadow-input-three';
-import '@arikimolloy/shadow-button/shadow-button-three';
+import './shadow-input-three';
+import './shadow-button-three';
 
 export default class ShadowFormThree extends LitElement {
   createRenderRoot() {

@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit-element';
 import consumerStyles from '../../consumer-styles.js';
-import '@arikimolloy/shadow-input/shadow-input-one';
-import '@arikimolloy/shadow-button/shadow-button-one';
+import './shadow-input-one';
+import './shadow-button-one';
 
 export default class ShadowFormOne extends LitElement {
   static get styles() {

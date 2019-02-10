@@ -1,4 +1,4 @@
-import ShadowButtonFour from '@arikimolloy/shadow-button/shadow-button-four';
+import ShadowButtonFour from '@arikimolloy/extend-web-component/shadow-button-four';
 import customStyles from './custom-styles';
 
 export default class CustomStyledShadowButtonFour extends ShadowButtonFour {

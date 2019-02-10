@@ -1,12 +1,12 @@
 import { LitElement, html } from 'lit-element';
 import './global-styles';
-import '@arikimolloy/shadow-form/shadow-form-one';
-import '@arikimolloy/shadow-form/shadow-form-two';
-import '@arikimolloy/shadow-form/shadow-form-three';
-import '@arikimolloy/shadow-form/shadow-form-five';
-import './custom-styled-shadow-form-four';
+import '@arikimolloy/import-external-cssresult/shadow-form-one';
+import '@arikimolloy/link-to-external-stylesheet/shadow-form-two';
+import '@arikimolloy/render-to-light-dom/shadow-form-three';
+import '@arikimolloy/global-styles-object/shadow-form-five';
+import './extended-web-components/custom-styled-shadow-form-four';
 
-export default class StylingSolutionsDemo extends LitElement {
+export default class DemoConsumerApp extends LitElement {
   render() {
     return html`
       <link rel="stylesheet" href="consumer-styles.css" />
@@ -89,4 +89,4 @@ export default class StylingSolutionsDemo extends LitElement {
     `;
   }
 }
-customElements.define('styling-solutions-demo', StylingSolutionsDemo);
+customElements.define('demo-consumer-app', DemoConsumerApp);

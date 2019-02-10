@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
-import '@arikimolloy/shadow-input/shadow-input-two';
-import '@arikimolloy/shadow-button/shadow-button-two';
+import './shadow-input-two';
+import './shadow-button-two';
 
 export default class ShadowFormTwo extends LitElement {
   render() {

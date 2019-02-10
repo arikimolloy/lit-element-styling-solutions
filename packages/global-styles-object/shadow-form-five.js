@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
-import '@arikimolloy/shadow-input/shadow-input-five';
-import '@arikimolloy/shadow-button/shadow-button-five';
+import './shadow-input-five';
+import './shadow-button-five';
 import './global-styles';
 
 export default class ShadowFormFive extends LitElement {

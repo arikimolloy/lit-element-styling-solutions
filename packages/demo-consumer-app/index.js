@@ -2387,7 +2387,7 @@ var main = (function () {
 
     class ShadowButtonThree extends LitElement {
       createRenderRoot() {
-        return this;
+        return this; // render to the light DOM
       }
 
       render() {
@@ -2410,7 +2410,10 @@ var main = (function () {
         <p>
           This element chain renders to the light DOM.
         </p>
-        <p>This method loses shadow DOM benefits for the component.</p>
+        <p>
+          This method loses shadow DOM benefits for the component, but allows
+          complete external styling with ease.
+        </p>
         <form>
           <shadow-input-three></shadow-input-three>
           <shadow-button-three></shadow-button-three>
@@ -2420,65 +2423,6 @@ var main = (function () {
       }
     }
     customElements.define('shadow-form-three', ShadowFormThree);
-
-    window.GlobalShadowStyles = window.GlobalShadowStyles || {};
-    window.GlobalShadowStyles['shadow-input-five'] =
-      window.GlobalShadowStyles['shadow-input-five'] ||
-      css`
-    /*
-      Default styles
-    */
-    label {
-      background: orange;
-      color: black;
-      font-weight: bold;
-    }
-
-    input {
-      font-size: 20px;
-      font-family: fantasy;
-    }
-  `;
-
-    class ShadowInputFive extends LitElement {
-      static get styles() {
-        return [window.GlobalShadowStyles['shadow-input-five']];
-      }
-
-      render() {
-        return html`
-      <label for="input">My Label Five</label>
-      <input id="input" placeholder="Enter a value" />
-    `;
-      }
-    }
-    customElements.define('shadow-input-five', ShadowInputFive);
-
-    window.GlobalShadowStyles = window.GlobalShadowStyles || {};
-    window.GlobalShadowStyles['shadow-button-five'] =
-      window.GlobalShadowStyles['shadow-button-five'] ||
-      css`
-    /*
-      Default styles
-    */
-    button {
-      font-size: 20px;
-      font-family: 'Courier New', Courier, monospace;
-    }
-  `;
-
-    class ShadowButtonFive extends LitElement {
-      static get styles() {
-        return [window.GlobalShadowStyles['shadow-button-five']];
-      }
-
-      render() {
-        return html`
-      <button>ShadowButtonFive</button>
-    `;
-      }
-    }
-    customElements.define('shadow-button-five', ShadowButtonFive);
 
     window.GlobalShadowStyles = window.GlobalShadowStyles || {};
     window.GlobalShadowStyles['shadow-form-five'] =
@@ -2521,6 +2465,33 @@ var main = (function () {
       cursor: pointer;
     }
   `;
+
+    class ShadowInputFive extends LitElement {
+      static get styles() {
+        return [window.GlobalShadowStyles['shadow-input-five']];
+      }
+
+      render() {
+        return html`
+      <label for="input">My Label Five</label>
+      <input id="input" placeholder="Enter a value" />
+    `;
+      }
+    }
+    customElements.define('shadow-input-five', ShadowInputFive);
+
+    class ShadowButtonFive extends LitElement {
+      static get styles() {
+        return [window.GlobalShadowStyles['shadow-button-five']];
+      }
+
+      render() {
+        return html`
+      <button>ShadowButtonFive</button>
+    `;
+      }
+    }
+    customElements.define('shadow-button-five', ShadowButtonFive);
 
     class ShadowFormFive extends LitElement {
       static get styles() {
@@ -2658,7 +2629,7 @@ var main = (function () {
     }
     customElements.define('shadow-form-four', CustomStyledShadowFormFour);
 
-    class StylingSolutionsDemo extends LitElement {
+    class DemoConsumerApp extends LitElement {
       render() {
         return html`
       <link rel="stylesheet" href="consumer-styles.css" />
@@ -2741,9 +2712,9 @@ var main = (function () {
     `;
       }
     }
-    customElements.define('styling-solutions-demo', StylingSolutionsDemo);
+    customElements.define('demo-consumer-app', DemoConsumerApp);
 
-    return StylingSolutionsDemo;
+    return DemoConsumerApp;
 
 }());
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=index.js.map

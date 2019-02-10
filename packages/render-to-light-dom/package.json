@@ -1,10 +1,10 @@
 {
-  "name": "@arikimolloy/shadow-button",
+  "name": "@arikimolloy/render-to-light-dom",
   "version": "0.0.0",
   "main": "index.js",
   "author": "Ariki Molloy <ariki.molloy@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "dependencies": {
     "lit-element": "^2.0.1"
   }

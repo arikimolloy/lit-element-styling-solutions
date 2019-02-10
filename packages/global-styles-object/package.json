@@ -1,13 +1,11 @@
 {
-  "name": "@arikimolloy/shadow-form",
+  "name": "@arikimolloy/global-styles-object",
   "version": "0.0.0",
   "main": "index.js",
   "author": "Ariki Molloy <ariki.molloy@gmail.com>",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "dependencies": {
-    "@arikimolloy/shadow-button": "^0.0.0",
-    "@arikimolloy/shadow-input": "^0.0.0",
     "lit-element": "^2.0.1"
   }
 }

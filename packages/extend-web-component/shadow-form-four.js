@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit-element';
-import '@arikimolloy/shadow-input/shadow-input-four';
-import '@arikimolloy/shadow-button/shadow-button-four';
+import './shadow-input-four';
+import './shadow-button-four';
 import ShadowFormFactory from './shadow-form-factory';
 
 export default class ShadowFormFour extends LitElement {

@@ -1,0 +1,23 @@
+{
+  "name": "@arikimolloy/demo-consumer-app",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Ariki Molloy <ariki.molloy@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "rollup": "^1.1.2",
+    "rollup-plugin-node-resolve": "^4.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "dependencies": {
+    "@arikimolloy/extend-web-component": "^0.0.0",
+    "@arikimolloy/global-styles-object": "^0.0.0",
+    "@arikimolloy/import-external-cssresult": "^0.0.0",
+    "@arikimolloy/link-to-external-stylesheet": "^0.0.0",
+    "@arikimolloy/render-to-light-dom": "^0.0.0",
+    "lit-element": "^2.0.1"
+  }
+}

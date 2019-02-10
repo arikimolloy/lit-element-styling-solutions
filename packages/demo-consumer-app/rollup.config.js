@@ -1,9 +1,9 @@
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-  input: 'index.js',
+  input: 'demo-consumer-app.js',
   output: {
-    file: 'demo/bundle.js',
+    file: 'index.js',
     format: 'iife',
     name: 'main',
     sourcemap: true
