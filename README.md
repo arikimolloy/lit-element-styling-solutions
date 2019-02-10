@@ -18,8 +18,8 @@ See the demo [here](https://arikimolloy.github.io/lit-element-styling-solutions/
 
 \#1: [Import external CSSResult](./docs/import-external-cssresult/README.md)  
 \#2: [Link to external stylesheet](./docs/link-to-external-stylesheet/README.md)  
-\#3: [Render to the light DOM](./docs/render-to-light-dom/README.md)
-\#4: [Extend the web component](./docs/extend-web-component/README.md)
+\#3: [Render to the light DOM](./docs/render-to-light-dom/README.md)  
+\#4: [Extend the web component](./docs/extend-web-component/README.md)  
 \#5: [Use a global styles object](./docs/global-styles-object/README.md)
 
 ## Todo
